@@ -27,15 +27,13 @@ def extract(url):
     }
 
     for sect in sections:
-        # print sect
-        # print dir(sect)
         text = sect.text
-
         stuff = text.split(":")
-        print stuff
 
         k = stuff[0]
         v = stuff[1]
+
+        data[k] = v
 
     return data
 
