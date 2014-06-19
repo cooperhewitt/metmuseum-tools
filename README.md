@@ -18,7 +18,7 @@ For example, this:
 
 	for url in links:
 
-        	data = col.extract(url)
+		data = col.extract(url)
 
 		print url
 		print pprint.pformat(data)
