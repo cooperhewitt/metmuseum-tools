@@ -45,7 +45,7 @@ class collection:
 
         return links
 
-    def extract(self, url):
+    def extract_label(self, url):
 
         rsp = self.ua.open(url)
         text = rsp.read()
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     links = col.search(q)
 
     for url in links:
-        data = col.extract(url)
+        data = col.extract_label(url)
 
         print url
         print pprint.pformat(data)

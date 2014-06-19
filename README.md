@@ -20,7 +20,7 @@ For example, this:
 
 	for url in links:
 
-		data = col.extract(url)
+		data = col.extract_label(url)
 
 		print url
 		print pprint.pformat(data)
