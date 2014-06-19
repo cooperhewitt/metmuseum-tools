@@ -10,7 +10,7 @@ For example, this:
 	import pprint
 	import metmuseum
 
-	# assume that sys.argv[1:] = "william hippo"
+	# assume that sys.argv[1:] == "william hippo"
 
 	q = sys.argv[1:]
 	q = " ".join(q)
