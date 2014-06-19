@@ -50,3 +50,8 @@ Would print:
 	 u'Period': u'Middle Kingdom',
 	 u'Reign': u'Senwosret I to Senwosret II'}
 	--
+
+#### To do
+
+* Error handling
+* Logging

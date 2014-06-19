@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 
 import urllib
+import logging
 
 from BeautifulSoup import BeautifulSoup
+
+class useragent(urllib.FancyURLopener):
+    version = 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.15) Gecko/20110303 Firefox/3.6.15'
 
 class collection:
 
     def __init__(self):
-        pass
+        self.ua = useragent()
 
     def search(self, q):
 
@@ -15,8 +19,8 @@ class collection:
         query = urllib.urlencode(query)
 
         url = "http://www.metmuseum.org/collection/the-collection-online/search?" + query
+        rsp = self.ua.open(url)
 
-        rsp = urllib.urlopen(url)
         text = rsp.read()
 
         soup = BeautifulSoup(text)
@@ -43,7 +47,7 @@ class collection:
 
     def extract(self, url):
 
-        rsp = urllib.urlopen(url)
+        rsp = self.ua.open(url)
         text = rsp.read()
 
         soup = BeautifulSoup(text)
